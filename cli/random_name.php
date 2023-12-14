@@ -12,15 +12,16 @@ $arr = [];
 function combineNames($str1 = "", $str2 = "")
 {
 	$params = [$str1, $str2];
-	foreach ($params as $param) {
+	foreach ($params as $index => $param) {
 		if ($param == "") {
-			$param = randomHeroName();
+			$params[$index] = randomHeroName();
 		}
 	}
-	echo implode($params, " - ");
+
+	return implode(" - ", $params);
 }
 
-function randomGenerate($arr, $amount)
+function randomGenerate(&$arr, $amount)
 {
 	for ($i = $amount; $i > 0; $i--) {
 		array_push($arr, randomHeroName());
@@ -31,9 +32,9 @@ function randomGenerate($arr, $amount)
 function randomHeroName()
 {
 	$hero_firstnames = ["captain", "doctor", "iron", "Hank", "ant", "Wasp", "the", "Hawk", "Spider", "Black"];
-	$hero_lastnames = ["America", "Strange", "man", "Pym", "girl", "hulk", "eye", "widow", "panther", "daredevil"]
+	$hero_lastnames = ["America", "Strange", "man", "Pym", "girl", "hulk", "eye", "widow", "panther", "daredevil"];
 	$heroes = [$hero_firstnames, $hero_lastnames];
-	echo $heroes[rand(0, count($heroes))][rand(0, 10)];
+	return $heroes[rand(0, (count($heroes) - 1))][rand(0, 9)];
 }
 
 echo "Here is the name: " . combineNames();
