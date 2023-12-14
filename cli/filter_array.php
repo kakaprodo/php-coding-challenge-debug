@@ -5,8 +5,11 @@
  * Please modify only the function itself, nothing else
  */
 
-function filterArray($validOptions, $input) {
-	for ($i = 0; $i <= count($input); $i++) {
+function filterArray($validOptions, $input)
+{
+	$inputsCount = count($input);
+
+	for ($i = 0; $i < $inputsCount; $i++) {
 		if (!in_array($input[$i], $validOptions)) {
 			unset($input[$i]);
 		}
