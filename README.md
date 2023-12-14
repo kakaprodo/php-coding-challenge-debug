@@ -1,6 +1,7 @@
 # Debug Challenge
 
 Check out the following files and fix them to fulfill their purposes:
+
 1. `cli\alphabet.php`
 2. `cli\filter_array.php`
 3. `cli\link.php`
@@ -11,6 +12,7 @@ Check out the following files and fix them to fulfill their purposes:
 We are using the following database:
 
 ![DB Diagram](diagram.png)
+
 <!--
 https://dbdiagram.io/
 
